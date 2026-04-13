@@ -114,6 +114,144 @@ pytest
 
 ---
 
+## Terminal Output
+
+### Default Profile: High-Energy Pop Fan (`python3 -m src.main`)
+
+```
+Loaded songs: 20
+
+============================================================
+  Profile: High-Energy Pop Fan
+  Prefs:   genre=pop, mood=happy, energy=0.85
+============================================================
+  #1  Sunrise City by Neon Echo
+       Genre: pop | Mood: happy | Energy: 0.82
+       Score: 5.44
+       Why:   genre match: pop (+2.0); mood match: happy (+1.5); energy proximity: 0.97 (+0.97); valence proximity: 0.96 (+0.48); danceability proximity: 0.99 (+0.49)
+
+  #2  Gym Hero by Max Pulse
+       Genre: pop | Mood: intense | Energy: 0.93
+       Score: 3.86
+       Why:   genre match: pop (+2.0); energy proximity: 0.92 (+0.92); valence proximity: 0.97 (+0.48); danceability proximity: 0.92 (+0.46)
+
+  #3  Carnival of Souls by Brass Attack
+       Genre: ska | Mood: happy | Energy: 0.80
+       Score: 3.42
+       Why:   mood match: happy (+1.5); energy proximity: 0.95 (+0.95); valence proximity: 0.97 (+0.49); danceability proximity: 0.95 (+0.48)
+
+  #4  Rooftop Lights by Indigo Parade
+       Genre: indie pop | Mood: happy | Energy: 0.76
+       Score: 3.39
+       Why:   mood match: happy (+1.5); energy proximity: 0.91 (+0.91); valence proximity: 0.99 (+0.49); danceability proximity: 0.98 (+0.49)
+
+  #5  Salsa Caliente by Fuego Trio
+       Genre: latin | Mood: happy | Energy: 0.88
+       Score: 3.39
+       Why:   mood match: happy (+1.5); energy proximity: 0.97 (+0.97); valence proximity: 0.94 (+0.47); danceability proximity: 0.90 (+0.45)
+```
+
+### Chill Lofi Studier
+
+```
+============================================================
+  Profile: Chill Lofi Studier
+  Prefs:   genre=lofi, mood=chill, energy=0.38
+============================================================
+  #1  Library Rain by Paper Lanterns
+       Genre: lofi | Mood: chill | Energy: 0.35
+       Score: 5.45
+       Why:   genre match: lofi (+2.0); mood match: chill (+1.5); energy proximity: 0.97 (+0.97); valence proximity: 0.98 (+0.49); danceability proximity: 0.98 (+0.49)
+
+  #2  Midnight Coding by LoRoom
+       Genre: lofi | Mood: chill | Energy: 0.42
+       Score: 5.44
+       Why:   genre match: lofi (+2.0); mood match: chill (+1.5); energy proximity: 0.96 (+0.96); valence proximity: 0.98 (+0.49); danceability proximity: 0.98 (+0.49)
+
+  #3  Focus Flow by LoRoom
+       Genre: lofi | Mood: focused | Energy: 0.40
+       Score: 3.97
+       Why:   genre match: lofi (+2.0); energy proximity: 0.98 (+0.98); valence proximity: 0.99 (+0.49); danceability proximity: 1.00 (+0.50)
+
+  #4  Bamboo Breeze by World Pulse
+       Genre: world | Mood: chill | Energy: 0.38
+       Score: 3.42
+       Why:   mood match: chill (+1.5); energy proximity: 1.00 (+1.00); valence proximity: 0.88 (+0.44); danceability proximity: 0.95 (+0.48)
+
+  #5  Spacewalk Thoughts by Orbit Bloom
+       Genre: ambient | Mood: chill | Energy: 0.28
+       Score: 3.27
+       Why:   mood match: chill (+1.5); energy proximity: 0.90 (+0.90); valence proximity: 0.93 (+0.46); danceability proximity: 0.81 (+0.41)
+```
+
+### Intense Rock Headbanger
+
+```
+============================================================
+  Profile: Intense Rock Headbanger
+  Prefs:   genre=rock, mood=intense, energy=0.92
+============================================================
+  #1  Storm Runner by Voltline
+       Genre: rock | Mood: intense | Energy: 0.91
+       Score: 5.46
+       Why:   genre match: rock (+2.0); mood match: intense (+1.5); energy proximity: 0.99 (+0.99); valence proximity: 0.97 (+0.48); danceability proximity: 0.99 (+0.49)
+
+  #2  Bass Drop City by Urban Riff
+       Genre: hip-hop | Mood: intense | Energy: 0.85
+       Score: 3.27
+       Why:   mood match: intense (+1.5); energy proximity: 0.93 (+0.93); valence proximity: 0.87 (+0.44); danceability proximity: 0.79 (+0.40)
+
+  #3  Neon Pulse by Grid Drop
+       Genre: edm | Mood: intense | Energy: 0.95
+       Score: 3.23
+       Why:   mood match: intense (+1.5); energy proximity: 0.97 (+0.97); valence proximity: 0.80 (+0.40); danceability proximity: 0.73 (+0.36)
+
+  #4  Gym Hero by Max Pulse
+       Genre: pop | Mood: intense | Energy: 0.93
+       Score: 3.22
+       Why:   mood match: intense (+1.5); energy proximity: 0.99 (+0.99); valence proximity: 0.68 (+0.34); danceability proximity: 0.77 (+0.39)
+
+  #5  Night Drive Loop by Neon Echo
+       Genre: synthwave | Mood: moody | Energy: 0.75
+       Score: 1.77
+       Why:   energy proximity: 0.83 (+0.83); valence proximity: 0.96 (+0.48); danceability proximity: 0.92 (+0.46)
+```
+
+### Adversarial Profile (Chill Genre + High Energy — edge case)
+
+```
+============================================================
+  Profile: Adversarial (Chill Genre + High Energy)
+  Prefs:   genre=ambient, mood=intense, energy=0.9
+============================================================
+  #1  Storm Runner by Voltline
+       Genre: rock | Mood: intense | Energy: 0.91
+       Score: 3.40
+       Why:   mood match: intense (+1.5); energy proximity: 0.99 (+0.99); valence proximity: 0.98 (+0.49); danceability proximity: 0.84 (+0.42)
+
+  #2  Spacewalk Thoughts by Orbit Bloom
+       Genre: ambient | Mood: chill | Energy: 0.28
+       Score: 3.25
+       Why:   genre match: ambient (+2.0); energy proximity: 0.38 (+0.38); valence proximity: 0.85 (+0.42); danceability proximity: 0.91 (+0.45)
+
+  #3  Bass Drop City by Urban Riff
+       Genre: hip-hop | Mood: intense | Energy: 0.85
+       Score: 3.23
+       Why:   mood match: intense (+1.5); energy proximity: 0.95 (+0.95); valence proximity: 0.92 (+0.46); danceability proximity: 0.64 (+0.32)
+
+  #4  Neon Pulse by Grid Drop
+       Genre: edm | Mood: intense | Energy: 0.95
+       Score: 3.16
+       Why:   mood match: intense (+1.5); energy proximity: 0.95 (+0.95); valence proximity: 0.85 (+0.42); danceability proximity: 0.58 (+0.29)
+
+  #5  Gym Hero by Max Pulse
+       Genre: pop | Mood: intense | Energy: 0.93
+       Score: 3.14
+       Why:   mood match: intense (+1.5); energy proximity: 0.97 (+0.97); valence proximity: 0.73 (+0.36); danceability proximity: 0.62 (+0.31)
+```
+
+---
+
 ## Experiments You Tried
 
 ### Experiment 1 — Weight Shift (Genre 2.0 → 0.5)
